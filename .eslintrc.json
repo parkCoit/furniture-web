@@ -1,7 +1,6 @@
 {
   "env": {
-    "browser": true,
-    "jest": true
+    "browser": true
   },
   "settings": {
     "react": {
@@ -15,7 +14,7 @@
     "plugin:prettier/recommended"
   ],
   "rules": {
-    "prettier/prettier": ["error", { "endOfLine": "auto" }],
+    "prettier/prettier": "error",
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/no-unused-vars": "off",
     "react/prop-types": "off",
