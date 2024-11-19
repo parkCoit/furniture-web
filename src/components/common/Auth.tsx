@@ -30,14 +30,15 @@ export function Auth() {
       const getData = async (data: LoginRequest) => {
         try {
           const response = await kakaoLoginData(data);
-          const resData = JSON.stringify(response.data);
+          const token = JSON.stringify(response.data.msg.access_token);
           if (response.data.data === "not found token") {
             alert("토큰 값이 일치하지 않습니다.");
             navigate("/");
           } else {
-            sessionStorage.setItem("token", resData);
-            const decodedToken = jwtDecode<CustomJwtPayload>(resData);
+            sessionStorage.setItem("token", token);
+            const decodedToken = jwtDecode<CustomJwtPayload>(token);
             console.log(decodedToken.id);
+            alert(JSON.stringify(decodedToken));
             alert("로그인 완료");
             navigate("/");
           }
