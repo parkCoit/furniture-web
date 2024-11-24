@@ -1,14 +1,21 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 export function Main() {
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    navigate("/login");
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
       <header className="bg-gray-800 text-white py-4">
         <div className="container mx-auto flex justify-between items-center">
-          <h1 className="text-xl font-bold">MyProject</h1>
+          <h1 className="text-xl font-bold">Furniture</h1>
           <nav className="space-x-4">
             <a href="#features" className="hover:underline">
               Features
@@ -19,7 +26,7 @@ export function Main() {
             <a href="#contact" className="hover:underline">
               Contact
             </a>
-            <Button>Login</Button>
+            <Button onClick={handleLogin}>Login</Button>
           </nav>
         </div>
       </header>
