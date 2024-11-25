@@ -6,6 +6,7 @@ import LoginPage from "@/pages/LoginPage";
 import MainPage from "@/pages/MainPage";
 import TopNavigation from "@/components/common/TopNavigation";
 import NotFoundPage from "@/pages/NotFoundPage";
+import { Footer } from "@/components/common/Footer";
 
 function App() {
   const location = useLocation();
@@ -13,6 +14,7 @@ function App() {
   const hideTopNavPaths = ["/login", "/auth", "/error"];
 
   const showTopNav = !hideTopNavPaths.includes(location.pathname);
+  const showFooter = !hideTopNavPaths.includes(location.pathname);
   return (
     <div className="App">
       {showTopNav && <TopNavigation />}
@@ -23,6 +25,7 @@ function App() {
         <Route path="/error" element={<NotFoundPage />} />
         <Route path="*" element={<Navigate to="/error" />} />
       </Routes>
+      {showTopNav && <Footer />}
     </div>
   );
 }
