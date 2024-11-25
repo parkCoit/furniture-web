@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
-const NotFound = () => {
+export const NotFound = () => {
   const navigate = useNavigate();
   const handleRedirect = () => {
     navigate("/");
@@ -22,5 +22,3 @@ const NotFound = () => {
     </div>
   );
 };
-
-export default NotFound;
