@@ -1,17 +1,27 @@
 import React from "react";
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import AuthPage from "@/pages/AuthPage";
 import LoginPage from "@/pages/LoginPage";
 import MainPage from "@/pages/MainPage";
+import TopNavigation from "@/components/common/TopNavigation";
+import NotFoundPage from "@/pages/NotFoundPage";
 
 function App() {
+  const location = useLocation();
+
+  const hideTopNavPaths = ["/login", "/auth", "/error"];
+
+  const showTopNav = !hideTopNavPaths.includes(location.pathname);
   return (
     <div className="App">
+      {showTopNav && <TopNavigation />}
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/error" element={<NotFoundPage />} />
+        <Route path="*" element={<Navigate to="/error" />} />
       </Routes>
     </div>
   );
