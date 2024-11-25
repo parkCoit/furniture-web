@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 export function Main() {
@@ -12,26 +12,6 @@ export function Main() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Header */}
-      <header className="bg-gray-800 text-white py-4">
-        <div className="container mx-auto flex justify-between items-center">
-          <h1 className="text-xl font-bold">Furniture</h1>
-          <nav className="space-x-4">
-            <a href="#features" className="hover:underline">
-              Features
-            </a>
-            <a href="#about" className="hover:underline">
-              About
-            </a>
-            <a href="#contact" className="hover:underline">
-              Contact
-            </a>
-            <Button onClick={handleLogin}>Login</Button>
-          </nav>
-        </div>
-      </header>
-
-      {/* Hero Section */}
       <section className="flex-grow bg-gradient-to-r from-blue-500 to-purple-600 text-white text-center py-20">
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold mb-4">Welcome to MyProject</h2>
@@ -40,7 +20,6 @@ export function Main() {
         </div>
       </section>
 
-      {/* Features Section */}
       <section id="features" className="py-12 bg-gray-100">
         <div className="container mx-auto">
           <h3 className="text-2xl font-bold text-center mb-8">Our Features</h3>
@@ -63,19 +42,12 @@ export function Main() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="bg-gray-800 text-white py-6">
         <div className="container mx-auto text-center">
-          <p className="mb-4">&copy; 2024 MyProject. All rights reserved.</p>
+          <p className="mb-4">&copy; GitHub </p>
           <div className="flex justify-center space-x-4">
             <a href="#" aria-label="Facebook">
-              <FaFacebook />
-            </a>
-            <a href="#" aria-label="Twitter">
-              <FaTwitter />
-            </a>
-            <a href="#" aria-label="Instagram">
-              <FaInstagram />
+              <FaGithub />
             </a>
           </div>
         </div>
