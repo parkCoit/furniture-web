@@ -2,12 +2,18 @@ import { FaGithub } from "react-icons/fa";
 
 export const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-6">
+    <footer className="bg-wood-dark text-wood-lightest py-6">
       <div className="container mx-auto text-center">
-        <p className="mb-4">&copy; GitHub </p>
-        <div className="flex justify-center space-x-4">
-          <a href="#" aria-label="Facebook">
-            <FaGithub />
+        <p className="mb-4">&copy; GitHub</p>
+        <div className="flex justify-center space-x-6">
+          <a
+            href="https://github.com/parkCoit"
+            aria-label="GitHub"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-wood-light hover:text-white"
+          >
+            <FaGithub size={24} />
           </a>
         </div>
       </div>

@@ -1,11 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { JwtPayload } from "jwt-decode";
 import { useNavigate } from "react-router-dom";
-
-interface CustomJwtPayload extends JwtPayload {
-  id?: string;
-  nickname?: string;
-}
 
 export default function TopNavigation() {
   const navigate = useNavigate();
@@ -13,12 +7,32 @@ export default function TopNavigation() {
   const handleLogin = () => {
     navigate("/login");
   };
+
   return (
-    <header className="bg-gray-800 text-white py-4">
+    <header className="bg-wood-dark text-wood-lightest py-4 shadow-md">
       <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-xl font-bold">Furniture</h1>
+        <h1 className="text-2xl font-bold">
+          <span className="text-wood-light">Furniture</span>
+        </h1>
         <nav className="space-x-4">
-          <Button onClick={handleLogin}>Login</Button>
+          <Button
+            className="bg-wood-light text-wood-dark hover:bg-wood-dark hover:text-wood-lightest"
+            onClick={() => navigate("/")}
+          >
+            Home
+          </Button>
+          <Button
+            className="bg-wood-light text-wood-dark hover:bg-wood-dark hover:text-wood-lightest"
+            onClick={() => navigate("/shop")}
+          >
+            Shop
+          </Button>
+          <Button
+            className="bg-wood-light text-wood-dark hover:bg-wood-dark hover:text-wood-lightest"
+            onClick={handleLogin}
+          >
+            Login
+          </Button>
         </nav>
       </div>
     </header>
