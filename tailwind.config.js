@@ -19,6 +19,11 @@ module.exports = {
     },
     extend: {
       colors: {
+        wood: {
+          lightest: "#F5E9DA",
+          light: "#D4A373",
+          dark: "#8C4D16",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -53,6 +58,7 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
