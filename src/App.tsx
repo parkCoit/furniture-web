@@ -7,6 +7,7 @@ import MainPage from "@/pages/MainPage";
 import TopNavigation from "@/components/common/TopNavigation";
 import NotFoundPage from "@/pages/NotFoundPage";
 import { Footer } from "@/components/common/Footer";
+import Design from "@/pages/DesignPage";
 
 function App() {
   const location = useLocation();
@@ -22,6 +23,7 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/design" element={<Design />} />
         <Route path="/error" element={<NotFoundPage />} />
         <Route path="*" element={<Navigate to="/error" />} />
       </Routes>
