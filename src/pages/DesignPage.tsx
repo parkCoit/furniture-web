@@ -44,53 +44,5 @@ const CustomBox = ({ designData, setDesignData }: any) => {
     });
   };
 
-  return (
-    <>
-      <mesh
-        scale={[
-          designData.dimensions.width,
-          designData.dimensions.height,
-          designData.dimensions.depth,
-        ]}
-      >
-        <boxGeometry
-          args={[
-            designData.dimensions.width,
-            designData.dimensions.height,
-            designData.dimensions.depth,
-          ]}
-        />
-        <meshStandardMaterial color={designData.color} />
-      </mesh>
-
-      <div className="absolute top-4 left-4 bg-white p-4 shadow rounded">
-        <h2 className="text-xl font-semibold mb-2">Edit Design</h2>
-        <div className="mb-2">
-          <label className="block">Color:</label>
-          <input
-            type="color"
-            value={designData.color}
-            onChange={handleColorChange}
-            className="w-full"
-          />
-        </div>
-        <div className="grid grid-cols-3 gap-2">
-          {["width", "height", "depth"].map((dim) => (
-            <div key={dim}>
-              <label>{dim}:</label>
-              <input
-                type="number"
-                name={dim}
-                value={designData.dimensions[dim]}
-                onChange={handleDimensionChange}
-                className="border px-2 py-1 w-full"
-                step="0.1"
-                min="0.1"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-    </>
-  );
+  return <div>test</div>;
 };
