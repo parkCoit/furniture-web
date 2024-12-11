@@ -8,24 +8,28 @@ export default function TopNavigation() {
     navigate("/login");
   };
 
+  const handleHome = () => {
+    navigate("/");
+  };
+
+  const handleCart = () => {
+    navigate("/cart");
+  };
+
   return (
     <header className="bg-wood-dark text-wood-lightest py-4 shadow-md">
       <div className="container mx-auto flex justify-between items-center">
         <h1 className="text-2xl font-bold">
-          <span className="text-wood-light">Furniture</span>
+          <span className="text-wood-light cursor-pointer" onClick={handleHome}>
+            Furniture
+          </span>
         </h1>
         <nav className="space-x-4">
           <Button
             className="bg-wood-light text-wood-dark hover:bg-wood-dark hover:text-wood-lightest"
-            onClick={() => navigate("/")}
+            onClick={handleCart}
           >
-            Home
-          </Button>
-          <Button
-            className="bg-wood-light text-wood-dark hover:bg-wood-dark hover:text-wood-lightest"
-            onClick={() => navigate("/shop")}
-          >
-            Shop
+            Cart
           </Button>
           <Button
             className="bg-wood-light text-wood-dark hover:bg-wood-dark hover:text-wood-lightest"
