@@ -3,6 +3,10 @@ import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 
 export function Main() {
+  const navigate = useNavigate();
+  const handleDesign = () => {
+    navigate("/design");
+  };
   return (
     <div
       className="min-h-screen flex flex-col bg-cover bg-center"
@@ -11,13 +15,16 @@ export function Main() {
       <section className="flex-grow bg-opacity-80 text-white text-center py-20 ">
         <div className="container mx-auto bg-wood-dark bg-opacity-70 py-10 px-4 rounded-lg shadow-md">
           <h2 className="text-4xl font-bold mb-4 text-wood-light">
-            Craft Your Perfect Space
+            가구를 맞춤으로 제작하세요!
           </h2>
           <p className="mb-8 text-wood-lightest">
             Furniture that blends nature with comfort.
           </p>
-          <Button className="bg-wood-light text-white hover:bg-wood-dark">
-            Explore Collection
+          <Button
+            className="bg-wood-light text-white hover:bg-wood-dark"
+            onClick={handleDesign}
+          >
+            시작하기
           </Button>
         </div>
       </section>
