@@ -39,7 +39,6 @@ const Design = () => {
 
   return (
     <div className="flex h-screen bg-gray-100">
-      {/* 왼쪽 사이드바 */}
       <div className="w-64 bg-white shadow-md p-4 space-y-4">
         <h2 className="text-xl font-semibold text-gray-700">Tools</h2>
         <button
@@ -66,7 +65,6 @@ const Design = () => {
         </button>
       </div>
 
-      {/* 3D 캔버스 영역 */}
       <div className="flex-1 relative">
         <Canvas>
           <ambientLight intensity={0.5} />
@@ -76,7 +74,6 @@ const Design = () => {
         </Canvas>
       </div>
 
-      {/* 오른쪽 속성 편집기 */}
       <div className="w-64 bg-white shadow-md p-4 space-y-4">
         <h2 className="text-xl font-semibold text-gray-700">Properties</h2>
 
