@@ -1,11 +1,19 @@
-import React from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 
 export function Main() {
   const navigate = useNavigate();
+  const [accessToken, setAccessToken] = useState<string | null>(
+    sessionStorage.getItem("accessToken"),
+  );
   const handleDesign = () => {
-    navigate("/design");
+    if (!accessToken) {
+      alert("로그인 먼저 해주세요");
+      navigate("/login");
+    } else {
+      navigate("/design");
+    }
   };
   return (
     <div

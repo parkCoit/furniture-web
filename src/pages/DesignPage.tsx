@@ -3,7 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
-const Design = () => {
+const DesignPage = () => {
   const [selectedShape, setSelectedShape] = useState<string>("cube");
   const [material, setMaterial] = useState<string>("Wood");
   const [width, setWidth] = useState<number>(2);
@@ -116,7 +116,7 @@ const Design = () => {
   );
 };
 
-export default Design;
+export default DesignPage;
 
 const Cube: React.FC<{
   width: number;

@@ -7,7 +7,9 @@ import MainPage from "@/pages/MainPage";
 import TopNavigation from "@/components/common/TopNavigation";
 import NotFoundPage from "@/pages/NotFoundPage";
 import { Footer } from "@/components/common/Footer";
-import Design from "@/pages/DesignPage";
+import DesignPage from "@/pages/DesignPage";
+import ThreePage from "@/pages/ThreePage";
+import ChatPage from "@/pages/ChatPage";
 
 function App() {
   const location = useLocation();
@@ -23,7 +25,9 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/design" element={<Design />} />
+        <Route path="/design" element={<DesignPage />} />
+        <Route path="/three" element={<ThreePage />} />
+        <Route path="/chat" element={<ChatPage />} />
         <Route path="/error" element={<NotFoundPage />} />
         <Route path="*" element={<Navigate to="/error" />} />
       </Routes>

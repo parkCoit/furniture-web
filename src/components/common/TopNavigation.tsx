@@ -1,19 +1,34 @@
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function TopNavigation() {
   const navigate = useNavigate();
+  const [accessToken, setAccessToken] = useState<string | null>(
+    sessionStorage.getItem("accessToken"),
+  );
+  const [refreshToken, setRefreshToken] = useState<string | null>(
+    sessionStorage.getItem("refreshToken"),
+  );
 
   const handleLogin = () => {
     navigate("/login");
+  };
+  const handleLogout = () => {
+    sessionStorage.removeItem("accessToken");
+    setAccessToken(null);
+    sessionStorage.removeItem("refreshToken");
+    setRefreshToken(null);
+    alert("로그아웃 완료");
+    navigate("/");
   };
 
   const handleHome = () => {
     navigate("/");
   };
 
-  const handleCart = () => {
-    navigate("/cart");
+  const handleChat = () => {
+    navigate("/chat");
   };
 
   return (
@@ -27,16 +42,25 @@ export default function TopNavigation() {
         <nav className="space-x-4">
           <Button
             className="bg-wood-light text-wood-dark hover:bg-wood-dark hover:text-wood-lightest"
-            onClick={handleCart}
+            onClick={handleChat}
           >
-            Cart
+            Chat
           </Button>
-          <Button
-            className="bg-wood-light text-wood-dark hover:bg-wood-dark hover:text-wood-lightest"
-            onClick={handleLogin}
-          >
-            Login
-          </Button>
+          {accessToken ? (
+            <Button
+              className="bg-wood-light text-wood-dark hover:bg-wood-dark hover:text-wood-lightest"
+              onClick={handleLogout}
+            >
+              로그아웃
+            </Button>
+          ) : (
+            <Button
+              className="bg-wood-light text-wood-dark hover:bg-wood-dark hover:text-wood-lightest"
+              onClick={handleLogin}
+            >
+              Login
+            </Button>
+          )}
         </nav>
       </div>
     </header>
